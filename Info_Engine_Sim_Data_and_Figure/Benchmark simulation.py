@@ -94,7 +94,7 @@ for k in range(N):
         lold = lnew
     xold = x[-1]
     lend = lold
-    vel[k] = (lend - linit)/totaltime
+    vel[k] = (lend - linit)/totaltime #calculate time-averaged velocity for the trajectory. we will use this later to set the velocity for the conventional engine mode
     Q[k] = Q[k]/((298*1.38e-23)*totaltime) #scales the heat by k_B T and the toral time T to obtain the heat flow rate per k_B T
     dx21[k] = dx21[k]/(totaltime/dt - 1) #finds trajectory average of dx^2
     x2 = x[::5]
@@ -139,7 +139,7 @@ lold = 0.
 cond = 0.
 for i in range(int(totaltime/dt)-1):
     xnew = xold + update_delta_x(xold,lold,klink,grav,dt,avgfactor,std)
-    lnew = lold + np.mean(vel)*dt
+    lnew = lold + np.mean(vel)*dt #this sets the velocity of the conventional engine mode to match that of the velocity for the info engine mode
     xold = xnew
     lold = lnew
 
