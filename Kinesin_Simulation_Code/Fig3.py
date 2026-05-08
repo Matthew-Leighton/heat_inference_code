@@ -141,6 +141,5 @@ fig.text(0.02, 0.34, r"$\mathbf{c)}$", ha="center", fontsize=14)
 plt.tight_layout(pad=0)
 plt.subplots_adjust(hspace=0.25)
 
-plt.savefig(this_dir / "Figure_3_250317.pdf", dpi=300)
-plt.savefig(this_dir / "Figure_3_250317.png", dpi=300)
+plt.savefig(this_dir / "Figure_3.pdf")
 plt.show()
